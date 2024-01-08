@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-export default class Form extends React.Component {
+class Form extends React.Component {
   render() {
+    const { inputValue, onInputChange, onAddTodo, onClearCompleted } = this.props;
+
     return (
       <div>
-        Form
+        <input type="text" value={inputValue} onChange={onInputChange} />
+        <button onClick={onAddTodo}>Add Todo</button>
+        <button onClick={onClearCompleted}>Clear Completed</button>
       </div>
-    )
+    );
   }
 }
+
+export default Form;

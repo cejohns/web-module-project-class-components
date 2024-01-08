@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-export default class Todo extends React.Component {
+class Todo extends React.Component {
   render() {
+    const { todo, onToggleCompleted } = this.props;
+
     return (
-      <div>
-        Todo
-      </div>
-    )
+      <li>
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => onToggleCompleted(todo.id)}
+        />
+        {todo.task}
+      </li>
+    );
   }
 }
+
+export default Todo;
